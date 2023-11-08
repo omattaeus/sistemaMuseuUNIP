@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1699476992 source:c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+	<conio.h>
+	<windows.h>
+	<time.h>
+	"dados.h"
+	"caso.h"
+	"menu.h"
+	"telalogin.h"
+	"pagamento.h"
+	"secoes.h"
+
+1699477482 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\dados.h
+
+1699476651 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\caso.h
+	"dados.h"
+	"menu.h"
+	"pagamento.h"
+	"secoes.h"
+	"alterando.h"
+	"pesquisar.h"
+
+1698186929 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\menu.h
+	"caso.h"
+
+1699478610 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\telalogin.h
+	"dados.h"
+
+1699476905 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\pagamento.h
+	"dados.h"
+	"tickets.h"
+	"secoes.h"
+
+1698187074 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\tickets.h
+	"pagamento.h"
+
+1698187077 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\secoes.h
+	"tickets.h"
+
+1699476872 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\alterando.h
+	"menu.h"
+	"dados.h"
+
+1699476584 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseu33\pesquisar.h
+	"dados.h"
+	"menu.h"
+
