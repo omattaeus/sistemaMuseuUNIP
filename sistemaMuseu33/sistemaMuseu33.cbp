@@ -40,6 +40,7 @@
 		<Unit filename="menu.h" />
 		<Unit filename="pagamento.h" />
 		<Unit filename="pesquisar.h" />
+		<Unit filename="pticket.h" />
 		<Unit filename="secoes.h" />
 		<Unit filename="telalogin.h" />
 		<Unit filename="tickets.h" />

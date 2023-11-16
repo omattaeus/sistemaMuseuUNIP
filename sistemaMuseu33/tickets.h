@@ -1,3 +1,4 @@
+/*
 #ifndef TICKETS_H_INCLUDED
 #define TICKETS_H_INCLUDED
 #include "pagamento.h"
@@ -5,7 +6,7 @@
 int opcao_secao;
 
 void ticket(){
-    printf("=====TICKET DREAM WITH=====\n\n");
+    printf("=====TICKET DREAM WITH=====\n");
     printf("QUAL SEÇÃO GOSTARIA DE ASSISTIR?\n");
     printf("[1] - HISTÓRIA DO UNIVERSO\n");
     printf("[2] - HISTORIA DE STEPHEN HAWKING\n");
@@ -17,3 +18,4 @@ void ticket(){
 }
 
 #endif // TICKETS_H
+*/

@@ -1,82 +1,147 @@
 #ifndef TELALOGIN_H_INCLUDED
 #define TELALOGIN_H_INCLUDED
 
-#include "dados.h"
+#define MAX_SENHA 16
+#define MAX_LOGIN 50
+#define CLEAN_BUFF do{ int c; while((c = getchar()) != '\n' && c != EOF);}while(0)
 
-void telalogin(){
-    /*
-    char login_cadastro[15];
-    char login_teste[15];
-    char senha_cadastro[15];
-    char senha_teste[15];
-    int cadastro_sucesso;
-    */
+#include "menu.h"
 
-    char login[50], senha[50];
-    int verificar_cadastro;
+void menu();
+char* CriaSenha();
 
-    FILE *p_login;
-    p_login = fopen("login.txt", "a");
+void telalogin() {
 
-    printf("----------------------------\n");
-    printf("   DreamWith - SISTEMA\n"      );
-    printf("----------------------------\n");
-    printf("1 - JÁ SOU CADASTRADO\n");
-    printf("2 - CADASTRAR\n");
-    printf("Digite a opção: ");
-    scanf("%d", &verificar_cadastro);
+    int Usuario(FILE* file, char* user, char* senha) // Valida usuário
+{
+    char tmpLogin[MAX_LOGIN];
+    char tmpSenha[MAX_SENHA];
 
-    if (verificar_cadastro == 1){
+    fscanf(file, "%s", tmpLogin);
+
+    while (!feof(file))
+    {
+        if (!strcmp(tmpLogin, user))
+        {
+            fscanf(file, "%s", tmpSenha);
+
+            if (!strcmp(tmpSenha, senha)) {
+                return 1;
+            }
+        }
+        else
+        {
+            fscanf(file, "%*s");
+        }
+        fscanf(file, "%s", tmpLogin);
+    }
+    return 0;
+}
+
+    FILE* fpIN;
+
+    int option = 0;
+
+	char *user  = (char*)malloc(sizeof *user * MAX_LOGIN);
+	char *senha,
+		 *confirmaSenha;
+
+    do {
         system("cls");
         printf("----------------------------\n");
-        printf("   DreamWith - SISTEMA\n"      );
+        printf("   DreamWith - SISTEMA\n");
         printf("----------------------------\n");
-        printf("Digite o Login: ");
-        scanf("%s", &login);
-        fflush(stdin);
+        printf("[1] - LOGIN\n[2] - CADASTRAR\n[3] - SAIR\n");
+        printf("Digite uma opção: ");
+        scanf("%d", &option);
+        CLEAN_BUFF;
 
-        printf("Digite a Senha: ");
-        scanf("%s", &senha);
-        fflush(stdin);
-
-        while(fscanf(p_login, "%s\n %s\n", senha_usuario.login, senha_usuario.senha) == 2) {
-            if (strcmp(senha_usuario.login, login) == 0 && strcmp(senha_usuario.senha, senha) == 0) {
-                printf("\nBem-vindo(a) ao Dream With!!\n");
-                sleep(2);
+        switch(option) {
+            case 1:
                 system("cls");
-                menu();
-            }
+                printf("=====LOGIN=====\n");
+                printf("Usuario: ");
+                fgets(user, MAX_LOGIN, stdin);
+                user[strcspn(user, "\n")] = '\0'; // Remove a quebra de linha do final
+
+                printf("Senha: ");
+                senha = CriaSenha();
+
+                fpIN = fopen("usuarios.txt", "r");
+                if(Usuario(fpIN, user, senha)) {
+                    printf("\nUsuario Registrado.\n");
+                    system("cls");
+                    menu();
+                } else {
+                    printf("\nUsuario Não Registrado\n");
+                    printf("RETORNANDO AO MENU!");
+                    sleep(2);
+                    system("cls");
+                    telalogin();
+                }
+
+                fclose(fpIN);
+                free(senha);
+                break;
+
+            case 2:
+                system("cls");
+                printf("=====CADASTRAR=====\n");
+                printf("Usuario: ");
+                fgets(user, MAX_LOGIN, stdin);
+                user[strcspn(user, "\n")] = '\0'; // Remove a quebra de linha do final
+
+                do {
+                    printf("Senha: ");
+                    senha = CriaSenha();
+                    printf("\nConfirmacao de senha: ");
+                    confirmaSenha = CriaSenha();
+                    printf("\n");
+
+                    if(!strcmp(senha, confirmaSenha)) {
+                        break;
+                    } else {
+                        printf("As senhas não são iguais. Tente novamente.\n");
+                    }
+                } while(1);
+
+                fpIN = fopen("usuarios.txt", "a");
+                fprintf(fpIN, "%s %s\n", user, senha);
+                fclose(fpIN);
+
+                free(senha);
+                free(confirmaSenha);
+                break;
+
+            case 3:
+                system("taskkill /f /im sistemaMuseu33.exe");
+                break;
+
+            default:
+                printf("Escolha 1, 2 ou 3...\n");
+                break;
         }
-        return 0; // Credenciais inválidas
 
-        if(verificar_cadastro == 2){
-            printf("Digite o nome de usuário: ");
-            scanf("%s", &senha_usuario.login);
-            printf("Digite a senha: ");
-            scanf("%s", &senha_usuario.senha);
-            fprintf(p_login, "%s\n %s\n", senha_usuario.login, senha_usuario.senha);
-            printf("Usuário registrado com sucesso!\n\n");
-            printf("Retornando ao menu de login!");
-            sleep(2);
-            system("cls");
-            telalogin();
-        }
+    } while(1);
 
-        /*
-            if (strcmp(login_cadastro, login_teste) == 0 && strcmp(senha_cadastro, senha_teste) == 0){
-                printf("\nBem-vindo(a) ao Dream With!!\n");
-                sleep(2);
-                system("cls");
-                menu();
-            }else{
-                printf("\nDADOS INVALIDOS!\n");
-                printf("DIGITE O LOGIN E A SENHA NOVAMENTE!");
-                sleep(2);
-                system("cls");
-                telalogin();
-            }
-
-    }else{
-    */
+    return;
 }
-#endif // TELALOGIN_H
+
+char* CriaSenha() {
+    register int i;
+    char* senha = (char*)malloc(sizeof *senha * MAX_SENHA);
+
+    for(i = 0; i < MAX_SENHA; i++) {
+        senha[i] = getch();
+        if(senha[i] == '\r') {
+            break;
+        } else {
+            printf("*");
+        }
+    }
+    senha[i] = '\0';
+
+    return senha;
+}
+
+#endif // TELALOGIN_H_INCLUDED

@@ -3,12 +3,14 @@
 
 #include "menu.h"
 #include "dados.h"
+#include "caso.h"
 
 int atualizarDados(){
     FILE *arquivo, *temp;
-    struct dados_cliente cliente;
+
     int atualizado = 0;
     int opcaoalt;
+
     const char *nomeArquivo = "cadastro.txt";
     const char *codigo;
     const char *novoNome;
@@ -23,15 +25,17 @@ int atualizarDados(){
         return 0;
     }
 
-    while (fscanf(arquivo, "%49[^,], %199[^,], %9[^\n]\n", cliente.nome_cliente, cliente.endereco_cliente, cliente.telefone_cliente) == 3) {
-        if (strstr(cliente.nome_cliente, codigo) || strstr(cliente.endereco_cliente, codigo) || strstr(cliente.telefone_cliente, codigo)) {
+
+
+    while (fscanf(arquivo, "%49[^,], %199[^,], %9[^\n]\n", dadoscliente.nome_cliente, dadoscliente.endereco_cliente, dadoscliente.telefone_cliente) == 3) {
+        if (strstr(dadoscliente.nome_cliente, codigo) || strstr(dadoscliente.endereco_cliente, codigo) || strstr(dadoscliente.telefone_cliente, codigo)) {
             // Se encontrarmos o registro que corresponde ao termo de pesquisa, atualize os dados
-            strcpy(cliente.nome_cliente, novoNome);
-            strcpy(cliente.endereco_cliente, novoEndereco);
-            strcpy(cliente.telefone_cliente, novoTelefone);
+            strcpy(dadoscliente.nome_cliente, novoNome);
+            strcpy(dadoscliente.endereco_cliente, novoEndereco);
+            strcpy(dadoscliente.telefone_cliente, novoTelefone);
             atualizado = 1;
         }
-        fprintf(temp, "%s\n,%s\n, %s\n", cliente.nome_cliente, cliente.endereco_cliente, cliente.telefone_cliente);
+        fprintf(temp, "%s\n,%s\n, %s\n", dadoscliente.nome_cliente, dadoscliente.endereco_cliente, dadoscliente.telefone_cliente);
     }
 
     if (atualizado) {
@@ -45,13 +49,10 @@ int atualizarDados(){
 
     printf("Digite o código de pesquisa: ");
     scanf("%s", &codigo);
-
     printf("Digite o novo nome: ");
     scanf("%s", &novoNome);
-
     printf("Digite o novo endereço: ");
     scanf("%s", &novoEndereco);
-
     printf("Digite o novo telefone: ");
     scanf("%s", &novoTelefone);
 

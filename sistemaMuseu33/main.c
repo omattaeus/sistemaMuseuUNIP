@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "dados.h"
 #include "caso.h"
@@ -16,8 +17,6 @@
 void telalogin();
 void menu();
 void cadastro();
-void secao();
-void ticket();
 void pagamentos();
 void alterando();
 
@@ -27,9 +26,7 @@ int main(){
     telalogin();
     menu();
 	cadastro();
-	ticket();
     pagamentos();
-	secao();
 
     return 0;
 }
