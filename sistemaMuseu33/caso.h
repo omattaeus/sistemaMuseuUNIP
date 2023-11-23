@@ -18,6 +18,7 @@ void alterando();
 int pesquisarTicket(int numTicket);
 
 int op;
+int i;
 char codFuncPesq[20];
 int numvisitantes, ticketnum;
 
@@ -83,7 +84,7 @@ void cadastro(){
 	            	sleep(2);
 	            	system("cls");
 	            	menu();
-	            	break;
+
         }
         getchar();
         fclose(p_arq);

@@ -5,27 +5,24 @@
 #include "dados.h"
 #include "caso.h"
 
+#define TAM 50
+#define TELE 10
+#define SIZE 200
+
 int atualizarDados(){
     FILE *arquivo, *temp;
 
-    int atualizado = 0;
+    int atualizado = 1;
     int opcaoalt;
 
     const char *nomeArquivo = "cadastro.txt";
     const char *codigo;
-    const char *novoNome;
-    const char *novoEndereco;
-    const char *novoTelefone;
+    const char *novoNome[TAM];
+    const char *novoEndereco[SIZE];
+    const char *novoTelefone[TELE];
 
     arquivo = fopen(nomeArquivo, "r");
     temp = fopen("cadastro.txt", "w");
-
-    if (arquivo == NULL || temp == NULL) {
-        perror("Erro ao abrir arquivos");
-        return 0;
-    }
-
-
 
     while (fscanf(arquivo, "%49[^,], %199[^,], %9[^\n]\n", dadoscliente.nome_cliente, dadoscliente.endereco_cliente, dadoscliente.telefone_cliente) == 3) {
         if (strstr(dadoscliente.nome_cliente, codigo) || strstr(dadoscliente.endereco_cliente, codigo) || strstr(dadoscliente.telefone_cliente, codigo)) {
@@ -38,27 +35,30 @@ int atualizarDados(){
         fprintf(temp, "%s\n,%s\n, %s\n", dadoscliente.nome_cliente, dadoscliente.endereco_cliente, dadoscliente.telefone_cliente);
     }
 
-    if (atualizado) {
+    if (atualizado == 1) {
         remove("cadastro.txt");
         rename("cadastroatt.txt", nomeArquivo);
     } else {
         remove("cadastroatt.txt");
     }
 
-    return atualizado;
-
     printf("Digite o código de pesquisa: ");
     scanf("%s", &codigo);
+    fflush(stdin);
     printf("Digite o novo nome: ");
     scanf("%s", &novoNome);
+    fflush(stdin);
     printf("Digite o novo endereço: ");
     scanf("%s", &novoEndereco);
+    fflush(stdin);
     printf("Digite o novo telefone: ");
-    scanf("%s", &novoTelefone);
+    scanf("%s", &novoEndereco);
+    fflush(stdin);
+    atualizado = 1;
 
     atualizado = atualizarDados(nomeArquivo, codigo, novoNome, novoEndereco, novoTelefone);
 
-    if (atualizado) {
+    if (atualizado == 1) {
         printf("Dados atualizados com sucesso!\n\n");
         printf("Deseja retornar ao menu? \n[1] - RETORNAR\n[2] - SAIR DO SISTEMA\n");
         scanf("%d", &opcaoalt);

@@ -49,7 +49,7 @@
 	"dados.h"
 	"menu.h"
 
-1700076379 source:c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\main.c
+1700782393 source:c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
@@ -65,9 +65,9 @@
 	"pagamento.h"
 	"secoes.h"
 
-1700065669 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\dados.h
+1700599073 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\dados.h
 
-1700077529 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\caso.h
+1700598061 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\caso.h
 	"dados.h"
 	"menu.h"
 	"pagamento.h"
@@ -77,17 +77,19 @@
 1699809793 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\menu.h
 	"caso.h"
 
-1700157290 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\pagamento.h
+1700783785 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\pagamento.h
 	"caso.h"
+	"secoes.h"
 
 1699737052 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\tickets.h
 	"pagamento.h"
 
-1699738860 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\secoes.h
-	"tickets.h"
+1700780509 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\secoes.h
+	"pagamento.h"
+	"dados.h"
 	"pagamento.h"
 
-1700074297 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\alterando.h
+1700595264 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\alterando.h
 	"menu.h"
 	"dados.h"
 	"caso.h"
@@ -96,6 +98,6 @@
 	"dados.h"
 	"menu.h"
 
-1700073395 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\telalogin.h
+1700593820 c:\users\mateus\documents\estudos\sistemamuseu33\sistemamuseuunip\sistemamuseu33\telalogin.h
 	"menu.h"
 

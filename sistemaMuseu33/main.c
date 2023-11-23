@@ -18,7 +18,12 @@ void telalogin();
 void menu();
 void cadastro();
 void pagamentos();
+void secao();
+void notas_secao();
 void alterando();
+int atualizarDados();
+void pesquisar();
+
 
 int main(){
     setlocale(LC_ALL, "Portuguese");
@@ -27,6 +32,10 @@ int main(){
     menu();
 	cadastro();
     pagamentos();
+    secao();
+    notas_secao();
+    atualizarDados();
+    pesquisar();
 
     return 0;
 }

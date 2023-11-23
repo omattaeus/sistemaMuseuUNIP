@@ -96,6 +96,7 @@ void telalogin() {
                     senha = CriaSenha();
                     printf("\nConfirmacao de senha: ");
                     confirmaSenha = CriaSenha();
+                    fpIN = fopen("usuarios.txt", "w");
                     printf("\n");
 
                     if(!strcmp(senha, confirmaSenha)) {
