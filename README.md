@@ -2,8 +2,6 @@
 #### 🇨 - Linguagem C
 #### ➡️ EM DESENVOLVIMENTO!
 ---
-<br>
-
 ### Sistema desenvolvido a partir de análise de requisitos do qual foi conversado com os professores na sala de aula!
 ### As principais característica do sistema são:
 #### ➡️ CADASTRAR VISITANTE
