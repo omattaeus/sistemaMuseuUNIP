@@ -1,6 +1,5 @@
 # 💻 SISTEMA DE GERENCIAMENTO p/ MUSEU TEMÁTICO
 #### 🇨 - Linguagem C
-#### ➡️ EM DESENVOLVIMENTO!
 ---
 ### Sistema desenvolvido a partir de análise de requisitos do qual foi conversado com os professores na sala de aula!
 ### As principais característica do sistema são:
