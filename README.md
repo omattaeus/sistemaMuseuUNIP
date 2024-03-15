@@ -19,4 +19,4 @@
 #### 📨 contatomateusgd@gmail.com
 #### 🔗 [Meu Repositório (outros projetos)](https://github.com/omattaeus?tab=repositories)
 ---
-### FEITO POR Mateus Gomes e Auxiliado por Gabriel Pinelli, Ana Beatriz Santos, Gabriel Contatori e Arieli de Fátima p/ PROJETO DA FACULDADE: GERENCIAMENTO DE MUSEU MULTI-TEMÁTICO
+### 🙋‍♂️ FEITO POR Mateus Gomes e Auxiliado por Gabriel Pinelli, Ana Beatriz Santos, Gabriel Contatori e Arieli de Fátima p/ PROJETO DA FACULDADE: GERENCIAMENTO DE MUSEU MULTI-TEMÁTICO
